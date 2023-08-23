@@ -54,25 +54,25 @@
     </style>
 <body>
     <div class="content">
-
+        <p>{{info.major}}</p>
         <table class="board_for_read">
             <tbody>
                 <tr>
                     <td class="td_title" style="text-align:center; width:20%;">제목</td>
                     <td style="padding:10px;">
-                        <input type="text" name="title" id="title" value="{{ board.title }}" readonly/>
+                        <input type="text" name="title" id="title" value="{{ info.title }}" readonly/>
                     </td>
                 </tr>
                 <tr>
                     <td class="td_title" style="text-align:center; width:20%;">작성일자</td>
                     <td style="padding:10px;">
-                        <span>{{ board.pub_date }}</span>
+                        <span>{{ info.pub_date }}</span>
                     </td>
                 </tr>
                 <tr>
                     <td class="td_title" style="text-align:center;">내용</td>
                     <td style="padding:10px;">
-                        <textarea name="detail" id="detail" rows="10" readonly>{{ board.content }}</textarea>
+                        <textarea name="detail" id="detail" rows="10" readonly>{{ info.content }}</textarea>
                     </td>
                 </tr>
             </tbody>
@@ -80,7 +80,7 @@
         <div style="text-align:left;">
             <a href="{% url 'share_info:index' %}">> Home</a>
     <div style="text-align:left;">
-        <a href="{% url 'share_info:editinfo' board.id %}">수정</a>
+        <a href="{% url 'share_info:editinfo' info.id %}">수정</a>
     </div>
 </body>
 </html>

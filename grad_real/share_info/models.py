@@ -1,6 +1,6 @@
 from django.db import models
 
-class info(models.Model):
+class Info(models.Model):
     """
     title: 제목
     content: 내용

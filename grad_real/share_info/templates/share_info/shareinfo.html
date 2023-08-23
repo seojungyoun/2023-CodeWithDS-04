@@ -33,9 +33,9 @@
         <h2>{{ title }}</h2>
     </div>
     <div style="text-align:right">
-        <a href="{% url 'share_info:write' %}">글쓰기</a>
+        <a href="{% url 'share_info:write_info' %}">글쓰기</a>
     </div>
-
+    <p>{{info.major}}</p>
     <table class="board">
         <thead>
         <tr class="header">
@@ -45,16 +45,16 @@
         </tr>
         </thead>
         <tbody>
-            {% if board_list %}
-            {% for board in board_list %}
+            {% if info_list %}
+            {% for info in info_list %}
             <tr class="{% if forloop.counter|divisibleby:2 %}even_bgcolor{% endif %}">
                 <td style="text-align:center;">{{ forloop.counter }}</td>
                 <td>
-                    <a href="{% url 'share_info:detail' board.id %}">
-                        {{ board.title }}
+                    <a href="{% url 'share_info:detail' info.id %}">
+                        {{ info.title }}
                     </a>
                 </td>
-                <td>{{ board.pub_date|date:'Y-m-d' }}</td>
+                <td>{{ info.pub_date|date:'Y-m-d' }}</td>
             </tr>
             {% endfor %}
         {% else %}

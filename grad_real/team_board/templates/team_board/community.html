@@ -33,9 +33,9 @@
         <h2>{{ title }}</h2>
     </div>
     <div style="text-align:right">
-        <a href="{% url 'team_board:write' %}">글쓰기</a>
+        <a href="{% url 'team_board:write_board' %}">글쓰기</a>
     </div>
-
+    <p>{{Board.major}}</p>
     <table class="board">
         <thead>
         <tr class="header">
@@ -62,8 +62,6 @@
                 <td colspan="3">작성된 게시글이 없습니다.</td>
             </tr>
         {% endif %}
-        
-                <td colspan="4">작성된 게시글이 없습니다.</td>
             </tr>
         </tbody>
     </table>
