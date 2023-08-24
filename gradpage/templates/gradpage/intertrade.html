@@ -1,10 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 국제통상학전공</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-</body>
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>국제통상학전공</p>
+              <p style="font-size: 1.7em">International Trade</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>글로벌융합대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <!-- changeDept -->
+                    <select name="major" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="국어국문학전공">국어국문학전공</option>
+                    <option value="일어일문학전공">일어일문학전공</option>
+                    <option value="중어중문학전공">중어중문학전공</option>
+                    <option value="영어영문학전공">영어영문학전공</option>
+                    <option value="불어불문학전공">불어불문학전공</option>
+                    <option value="독어독문학전공">독어독문학전공</option>
+                    <option value="스페인어전공">스페인어전공</option>
+                    <option value="사학전공">사학전공</option>
+                    <option value="철학전공">철학전공</option>
+                    <option value="미술사학전공">미술사학전공</option>
+                    <option value="문화인류학전공">문화인류학전공</option>
+                    <option value="경영학전공">경영학전공</option>
+                    <option value="회계학전공">회계학전공</option>
+                    <option selected value="국제통상학전공">국제통상학전공</option>
+                    <option value="법학전공">법학전공</option>
+                    <option value="사회학전공">사회학전공</option>
+                    <option value="문헌정보학전공">문헌정보학전공</option>
+                    <option value="심리학전공">심리학전공</option>
+                    <option value="아동가족학전공">아동가족학전공</option>
+                    <option value="사회복지학전공">사회복지학전공</option>
+                    <option value="정치외교학전공">정치외교학전공</option>
+                    <option value="의상디자인학전공">의상디자인학전공</option>
+                    <option value="유아교육과">유아교육과</option>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">
+              20학번부터~<br />
+              • 필수요건 1.(영역별 학점 이수)<br />
+              (제1전공, 제2전공) 각 영역 과목을 포함하여 전공 교과목 36학점 이상 이수<br />
+              1. 기초과목 9학점: 경제원론1, 무역실무론1, 국제경영론<br />
+              2. 국제경제 영역 1과목(3학점) 이상<br />
+              3. 국제경영(국제물류) 영역 1과목(3학점) 이상<br />
+              4. 무역실무 영역 2과목(6학점) 이상<br />
+              5. 전공 무역영어회화 교과목인 Global Business Communications(Leader) 또는 Global Business Communications(Executive) 중 1과목을 포함하여 6학점 이상의 영어강의 이수<br />
+              • 필수요건 2.(공인영어점수 및 성과요건)<br />
+              (제1전공) 공인영어시험 점수를 감안한 성과요건<br />
+              1. 공인영어시험 점수<br />
+              &nbsp; 1&#41; 토익 850점 이상: 성과요건 면제<br />
+              &nbsp; 2&#41; 토익 800점 이상 ~ 850점 미만: 성과요건 중 1개 이상 충족 필요<br />
+              &nbsp; 3&#41; 토익 750점 이상 ~ 800점 미만: 성과요건 중 2개 이상 충족 필요<br />
+              &nbsp; *토익 이외의 공인영어시험 점수는 토익 점수로 환산하여 인정<br />
+              &nbsp; ※(복수전공) 상기 점수에서 50점 하향하여 적용<br />
+              2. 성과요건<br />
+              &nbsp; 1&#41; 전공자격증: 국제무역사 1급, 무역영어 2급 이상, 물류관리사, 수입관리사, 외환관리사, 원산지관리사, 투자상담사, 유통관리사 2급 이상, 외환전문역 1종, 2종 등<br />
+              &nbsp; 2&#41; 시험: 매경TEST 600점 이상, 한경TESAT 210점 이상 등<br />
+              &nbsp; 3&#41; 교환학생: 국가무관, 1학기 이상<br />
+              &nbsp; 4&#41; 전국규모 공모전 또는 경연대회 입상(편입생의 경우 이전 대학교 입상경력 인정)<br />
+              &nbsp; 5&#41; 교내 단과대학 학술제 동상 이상 입상<br />
+              &nbsp; *위에 명시되지 않은 성과요건에 대해서는 전공 졸업사정위원회에서 결정
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>

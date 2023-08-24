@@ -1,10 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 영어영문학전공</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-</body>
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>영어영문학전공</p>
+              <p style="font-size: 1.7em">English Language & Literature</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>글로벌융합대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                  <!-- changeDept -->
+                  <select name="dept" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="국어국문학전공">국어국문학전공</option>
+                    <option value="일어일문학전공">일어일문학전공</option>
+                    <option value="중어중문학전공">중어중문학전공</option>
+                    <option selected value="영어영문학전공">영어영문학전공</option>
+                    <option value="불어불문학전공">불어불문학전공</option>
+                    <option value="독어독문학전공">독어독문학전공</option>
+                    <option value="스페인어전공">스페인어전공</option>
+                    <option value="사학전공">사학전공</option>
+                    <option value="철학전공">철학전공</option>
+                    <option value="미술사학전공">미술사학전공</option>
+                    <option value="문화인류학전공">문화인류학전공</option>
+                    <option value="경영학전공">경영학전공</option>
+                    <option value="회계학전공">회계학전공</option>
+                    <option value="국제통상학전공">국제통상학전공</option>
+                    <option value="법학전공">법학전공</option>
+                    <option value="사회학전공">사회학전공</option>
+                    <option value="문헌정보학전공">문헌정보학전공</option>
+                    <option value="심리학전공">심리학전공</option>
+                    <option value="아동가족학전공">아동가족학전공</option>
+                    <option value="사회복지학전공">사회복지학전공</option>
+                    <option value="정치외교학전공">정치외교학전공</option>
+                    <option value="의상디자인학전공">의상디자인학전공</option>
+                    <option value="유아교육과">유아교육과</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">
+              1. 이하 1-1 또는 1-2 중 택 1<br />
+              &nbsp; 1-1. 공인영어 시험 성적 제출<br />
+              &nbsp; &nbsp;-TOEIC: 800점 이상<br />
+              &nbsp; &nbsp;-NEW TEPS: 348점 이상<br />
+              &nbsp; &nbsp;-TOEFL: 80점 이상<br />
+              &nbsp; &nbsp;-IELTS: 6.0점 이상<br />
+              &nbsp; &nbsp;-OPIc: IM3 이상<br />
+              &nbsp; &nbsp;(위의 공인 영어시험의 유효 기일은 해당 학위수여식 일자를 원칙으로 함.)<br />
+              &nbsp; 1-2. 영어 관련 비교과 활동 업적 및 증명서 제출<br />
+              &nbsp; &nbsp;세계 대학생 영어토론대회(WUDC) 입상, 번역물 출반, 각종 교내대회(단과대학 학술제 영어 부문, 영어글쓰기대회) 입상 등 다양한 비교과 활동을 통해 영어능력을 향상하고 이를 입증할 수
+              <br />&nbsp;&nbsp;&nbsp;있는 증명서 제출<br />
+              &nbsp; &nbsp;(1-2에서 열거한 항목에 해당하는 성과의 적절성에 대하여 교수사정회를 거쳐 심사함.)<br />
+              2. 영어영문학과 교수사정위원회에서 인정하는 대체과제 &nbsp; 1-1 또는 1-2를 충족하지 못한 경우, 즉 부득이한 사정으로 공인점수성적표 또는 활동증명서를 졸업시한까지 받지 못한 학생의 경우 일정기간 영어 관련 봉사활동 또는 특정 주제의 논문 과제 및 인증서를 제출하고 영문과 교수들로 이루어진 졸업사정위원회를 거침 &nbsp; (위 1또는 2의 두 가지 항목 중 택 1)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>
