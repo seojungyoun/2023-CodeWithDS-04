@@ -1,173 +1,287 @@
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>정보공유 - 게시글 수정</title>
-</head>
-<style type="text/css">
-    .content {
-        max-width:500px;
-        margin: auto;
-        padding:10px;
-    }
-
-    .board_for_read {
-        width: 100%;
-        background-color:#f1f1f1;
-    }
-
-    #title, #writer {
-        height: 32px;
-        width: 100%;
-        border-radius: 0.5em;
-        border: none;
-        font-family: inherit;
-        font-size: inherit;
-    }
-
-    textarea {
-        width: 100%;
-        font-family: inherit;
-        font-size: 100%;
-        resize: none;
-        border-radius: 0.5em;
-        padding-block: 10px;
-        border: 0px;
-    }
-
-    .td_title {
-        background-color: #d8d8d8
-    }
-</style>
-<body>
-    <div class="content">
-        <form action="{% url 'share_info:edit_info' info.id %}" method="post">
-            {% csrf_token %}
-            <table class="board_for_read">
-                <tbody>
-                    <tr>
-                        <td class="td_title" style="text-align:center; width:20%;">제목</td>
-                        <td style="padding:10px;">
-                            <input type="text" name="title" id="title" value="{{ info_to_edit.title }}">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td_title" style="text-align:center;">내용</td>
-                        <td style="padding:10px;">
-                            <textarea name="detail" id="content" rows="10">{{ info_to_edit.content }}</textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td_title" style="text-align:center;">전공</td>
-                        <td style="padding:10px;">
-                            <select name="major" id="major">
-                                <option value="국어국문학전공">국어국문학전공</option>
-                                <option value="일어일문학전공">일어일문학전공</option>
-                                <!-- 다른 전공 옵션들도 추가 -->
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div style="text-align:left;">
-                <button type="submit">수정 완료</button>
+{% comment %}
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 정보공유(게시글 수정)</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/post.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
             </div>
-        </form>
-        <div style="text-align:left;">
-            <a href="{% url 'share_info:index' %}">> 목록으로</a>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
         </div>
-        <div style="text-align:left;">
-            <a href="{% url 'share_info:detail' info.id %}">> 돌아가기</a>
+        <div class="right-line">
+          <hr />
+          <hr />
         </div>
+      </header>
+
+      <section class="sec">
+        <div class="content">
+          <div class="content-title">
+            <p>게시글 수정 (정보 공유)</p>
+          </div>
+
+          <div class="box">
+            <form action="{% url 'share_info:edit_info' info.id %}" method="post" class="form">
+              {% csrf_token %}
+              <div class="dept">
+                <p>전공 선택</p>
+                <select name="major" id="input-dropdown">
+                  <option selected disabled value="">전공을 선택해주세요. ▼</option>
+                  <optgroup label="글로벌융합대학">
+                    <option value="국어국문학전공">국어국문학전공</option>
+                    <option value="일어일문학전공">일어일문학전공</option>
+                    <option value="중어중문학전공">중어중문학전공</option>
+                    <option value="영어영문학전공">영어영문학전공</option>
+                    <option value="불어불문학전공">불어불문학전공</option>
+                    <option value="독어독문학전공">독어독문학전공</option>
+                    <option value="스페인어전공">스페인어전공</option>
+                    <option value="사학전공">사학전공</option>
+                    <option value="철학전공">철학전공</option>
+                    <option value="미술사학전공">미술사학전공</option>
+                    <option value="문화인류학전공">문화인류학전공</option>
+                    <option value="경영학전공">경영학전공</option>
+                    <option value="회계학전공">회계학전공</option>
+                    <option value="국제통상학전공">국제통상학전공</option>
+                    <option value="법학전공">법학전공</option>
+                    <option value="사회학전공">사회학전공</option>
+                    <option value="문헌정보학전공">문헌정보학전공</option>
+                    <option value="심리학전공">심리학전공</option>
+                    <option value="아동가족학전공">아동가족학전공</option>
+                    <option value="사회복지학전공">사회복지학전공</option>
+                    <option value="정치외교학전공">정치외교학전공</option>
+                    <option value="의상디자인학전공">의상디자인학전공</option>
+                    <option value="유아교육과">유아교육과</option>
+                  </optgroup>
+                  <optgroup label="과학기술대학">
+                    <option value="컴퓨터공학전공">컴퓨터공학전공</option>
+                    <option value="IT미디어공학전공">IT미디어공학전공</option>
+                    <option value="바이오공학전공">바이오공학전공</option>
+                    <option value="사이버보안전공">사이버보안전공</option>
+                    <option value="소프트웨어전공">소프트웨어전공</option>
+                    <option value="생활체육학전공">생활체육학전공</option>
+                    <option value="식품영양학전공">식품영양학전공</option>
+                    <option value="정보통계학전공">정보통계학전공</option>
+                    <option value="화학전공">화학전공</option>
+                    <option value="수학전공">수학전공</option>
+                  </optgroup>
+                  <optgroup label="Art & Design 대학">
+                    <option value="동양화전공">동양화전공</option>
+                    <option value="서양화전공">서양화전공</option>
+                    <option value="실내디자인전공">실내디자인전공</option>
+                    <option value="시각디자인전공">시각디자인전공</option>
+                    <option value="텍스타일디자인전공">텍스타일디자인전공</option>
+                  </optgroup>
+                  <optgroup label="약학대학">
+                    <option value="약학과(신입생)">약학과(신입생)</option>
+                    <option value="약학과(편입생)">약학과(편입생)</option>
+                  </optgroup>
+                  <optgroup label="미래인재대학">
+                    <option value="한국학전공">한국학전공</option>
+                    <option value="한국어교육전공">한국어교육전공</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="title">
+                <p>제목</p>
+                <input type="text" name="title" id="title-text" placeholder="" value="{{ info_to_edit.title }}" />
+              </div>
+              <div class="description">
+                <p>내용</p>
+                <textarea name="detail" id="description-text" cols="" rows="" placeholder="" value="{{ info_to_edit.content }}"></textarea>
+              </div>
+              <input type="submit" value="수정" class="submit-button" />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
     </div>
-    
-</body>
+    <script src="{% static 'js/preview-file.js' %}"></script>
+  </body>
 </html>
- {% endcomment %}
+{% endcomment %}
 
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>정보공유 - 게시글 수정</title>
-</head>
-<style type="text/css">
-    .content {
-        max-width:500px;
-        margin: auto;
-        padding:10px;
-    }
-
-    .board_for_read {
-        width: 100%;
-        background-color:#f1f1f1;
-    }
-
-    #title, #writer {
-        height: 32px;
-        width: 100%;
-        border-radius: 0.5em;
-        border: none;
-        font-family: inherit;
-        font-size: inherit;
-    }
-
-    textarea {
-        width: 100%;
-        font-family: inherit;
-        font-size: 100%;
-        resize: none;
-        border-radius: 0.5em;
-        padding-block: 10px;
-        border: 0px;
-    }
-
-    .td_title {
-        background-color: #d8d8d8
-    }
-</style>
-<body>
-    <div class="content">
-        <form action="{% url 'share_info:edit_info' info.id %}" method="post">
-            {% csrf_token %}
-            <table class="board_for_read">
-                <tbody>
-                    <tr>
-                        <td class="td_title" style="text-align:center; width:20%;">제목</td>
-                        <td style="padding:10px;">
-                            <input type="text" name="title" id="title" value="{{ info.title }}">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td_title" style="text-align:center;">내용</td>
-                        <td style="padding:10px;">
-                            <textarea name="detail" id="content" rows="10">{{ info.content }}</textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="td_title" style="text-align:center;">전공</td>
-                        <td style="padding:10px;">
-                            <select name="major" id="major">
-                                <option value="국어국문학전공">국어국문학전공</option>
-                                <option value="일어일문학전공">일어일문학전공</option>
-                                <!-- 다른 전공 옵션들도 추가 -->
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div style="text-align:left;">
-                <button type="submit">수정 완료</button>
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 정보공유(게시글 작성)</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/post.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="{% url 'share_info:index' %}">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
             </div>
-        </form>
-        <div style="text-align:left;">
-            <a href="{% url 'share_info:index' %}">> 목록으로</a>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
         </div>
-        <div style="text-align:left;">
-            <a href="{% url 'share_info:detail' info.id %}">> 돌아가기</a>
+        <div class="right-line">
+          <hr />
+          <hr />
         </div>
-    </div>
-    
-</body>
-</html>
+      </header>
 
+      <section class="sec">
+        <div class="content">
+          <div class="content-title">
+            <p>게시글 작성 (정보 공유)</p>
+          </div>
+
+          <div class="box">
+            <form action="{% url 'share_info:edit_info' info.id %}" method="post" class="form">
+              {% csrf_token %}
+              <div class="dept">
+                <p>전공 선택</p>
+                <select name="major" id="input-dropdown">
+                  <option disabled value="">전공을 선택해주세요. ▼</option>
+                  <optgroup label="글로벌융합대학">
+                    <option value="국어국문학전공">국어국문학전공</option>
+                    <option value="일어일문학전공">일어일문학전공</option>
+                    <option value="중어중문학전공">중어중문학전공</option>
+                    <option value="영어영문학전공">영어영문학전공</option>
+                    <option value="불어불문학전공">불어불문학전공</option>
+                    <option value="독어독문학전공">독어독문학전공</option>
+                    <option value="스페인어전공">스페인어전공</option>
+                    <option value="사학전공">사학전공</option>
+                    <option value="철학전공">철학전공</option>
+                    <option value="미술사학전공">미술사학전공</option>
+                    <option value="문화인류학전공">문화인류학전공</option>
+                    <option value="경영학전공">경영학전공</option>
+                    <option value="회계학전공">회계학전공</option>
+                    <option value="국제통상학전공">국제통상학전공</option>
+                    <option value="법학전공">법학전공</option>
+                    <option value="사회학전공">사회학전공</option>
+                    <option value="문헌정보학전공">문헌정보학전공</option>
+                    <option value="심리학전공">심리학전공</option>
+                    <option value="아동가족학전공">아동가족학전공</option>
+                    <option value="사회복지학전공">사회복지학전공</option>
+                    <option value="정치외교학전공">정치외교학전공</option>
+                    <option value="의상디자인학전공">의상디자인학전공</option>
+                    <option value="유아교육과">유아교육과</option>
+                  </optgroup>
+                  <optgroup label="과학기술대학">
+                    <option value="컴퓨터공학전공">컴퓨터공학전공</option>
+                    <option value="IT미디어공학전공">IT미디어공학전공</option>
+                    <option value="바이오공학전공">바이오공학전공</option>
+                    <option value="사이버보안전공">사이버보안전공</option>
+                    <option value="소프트웨어전공">소프트웨어전공</option>
+                    <option value="생활체육학전공">생활체육학전공</option>
+                    <option value="식품영양학전공">식품영양학전공</option>
+                    <option value="정보통계학전공">정보통계학전공</option>
+                    <option value="화학전공">화학전공</option>
+                    <option value="수학전공">수학전공</option>
+                  </optgroup>
+                  <optgroup label="Art & Design 대학">
+                    <option value="동양화전공">동양화전공</option>
+                    <option value="서양화전공">서양화전공</option>
+                    <option value="실내디자인전공">실내디자인전공</option>
+                    <option value="시각디자인전공">시각디자인전공</option>
+                    <option value="텍스타일디자인전공">텍스타일디자인전공</option>
+                  </optgroup>
+                  <optgroup label="약학대학">
+                    <option value="약학과(신입생)">약학과(신입생)</option>
+                    <option value="약학과(편입생)">약학과(편입생)</option>
+                  </optgroup>
+                  <optgroup label="미래인재대학">
+                    <option value="한국학전공">한국학전공</option>
+                    <option value="한국어교육전공">한국어교육전공</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="title">
+                <p>제목</p>
+                <input type="text" name="title" id="title-text" placeholder="제목을 작성해주세요." value="{{ info.title }}" />
+              </div>
+              <div class="description">
+                <p>내용</p>
+                <textarea name="detail" id="description-text" cols="" rows="" placeholder="내용을 작성해주세요.">{{ info.content }}</textarea>
+              </div>
+              <input type="submit" value="작성" class="submit-button" />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+    <script src="{% static 'js/preview-file.js' %}"></script>
+  </body>
+</html>
