@@ -1,10 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<html lang="kor">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 회계학전공</title>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+      </head>
+      <body>
+        <div class="container">
+          <header class="hd">
+            <div class="left-line">
+              <hr />
+              <hr />
+            </div>
+            <div class="logo">
+              <a href="/">
+                <img src="{% static 'image/logo.png' %}" alt="로고" />
+              </a>
+            </div>
+            <div class="center-line">
+              <hr />
+              <hr />
+            </div>
+            <div class="user">
+              <div class="login-username">
+                <div class="login">
+                  <a href="#">
+                    <p>LOGIN / SIGNUP</p>
+                  </a>
+                </div>
+              </div>
+              <a href="#">
+                <div class="profile">
+                  <p>MYPAGE</p>
+                  <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+              ></a>
+            </div>
+            <div class="right-line">
+              <hr />
+              <hr />
+            </div>
+          </header>
+    
+          <section class="sec">
+            <div class="content">
+              <div class="dept">
+                <!-- 대학 정보 -->
+                <div class="univ">
+                  <p>회계학전공</p>
+                  <p style="font-size: 1.7em">Accounting</p>
+                </div>
+                <div class="select-dept">
+                  <div class="univ-name">
+                    <p>글로벌융합대학</p>
+                  </div>
+                  <div class="choose">
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                      <!-- changeDept -->
+                      <select name="major" id="input-dropdown">
+                      <option disabled value="">전공을 선택해주세요. ▼</option>
+                      <option value="국어국문학전공">국어국문학전공</option>
+                      <option value="일어일문학전공">일어일문학전공</option>
+                      <option value="중어중문학전공">중어중문학전공</option>
+                      <option value="영어영문학전공">영어영문학전공</option>
+                      <option value="불어불문학전공">불어불문학전공</option>
+                      <option value="독어독문학전공">독어독문학전공</option>
+                      <option value="스페인어전공">스페인어전공</option>
+                      <option value="사학전공">사학전공</option>
+                      <option value="철학전공">철학전공</option>
+                      <option value="미술사학전공">미술사학전공</option>
+                      <option value="문화인류학전공">문화인류학전공</option>
+                      <option value="경영학전공">경영학전공</option>
+                      <option selected value="회계학전공">회계학전공</option>
+                      <option value="국제통상학전공">국제통상학전공</option>
+                      <option value="법학전공">법학전공</option>
+                      <option value="사회학전공">사회학전공</option>
+                      <option value="문헌정보학전공">문헌정보학전공</option>
+                      <option value="심리학전공">심리학전공</option>
+                      <option value="아동가족학전공">아동가족학전공</option>
+                      <option value="사회복지학전공">사회복지학전공</option>
+                      <option value="정치외교학전공">정치외교학전공</option>
+                      <option value="의상디자인학전공">의상디자인학전공</option>
+                      <option value="유아교육과">유아교육과</option>
+                      </select>
+                      <input type="submit" value="선택" id="choose-btn" />
+                    </form>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="box">
+                졸업요건
+                <div class="contentbox">
+                  [교과 적용 년도 2020학년도부터 모든 학번 대상] 1. 아래 졸업요건 1&#41;과 2&#41;를 모두 만족 충족하여야 한다.<br />
+                  &nbsp; 1&#41; ①또는 ② 중 택 1<br />
+                  &nbsp; &nbsp; &nbsp; ① 공인영어점수 제출: 토익 700점, 토플 76점, 뉴탭스 327점, 토익스피킹 6등급 이상, 이에 상응하는 기타 영어 성적(지텔프, 오픽 등)<br />
+                  &nbsp; &nbsp; &nbsp; ② 다음 중 1개 이상의 자격증 취득<br />
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 공인회계사 1차 시험 합격, 세무사 1차 시험 합격, AICPA, 전산세무 2급, 전산회계 1급, 재경관리사, 증권투자상담사, 파생상품상담사, 은행FP, AFPK, 투자자산운용사, ERP, MOS,<br />
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 컴퓨터활용능력1급, 공무원시험 합격, 감정평가사, 주택관리사 또는 이에 상응하는 자격증으로 학과장의 승인을 받은 것.<br />
+                  2. 복수전공자 및 제2전공자의 대한 졸업 요건 사항<br />
+                  &nbsp; &nbsp; 복수전공자 및 제2전공자는 위 내용 졸업 요건을 모두 동일하게 적용함.<br />
+                  3. 부전공자는 학과별 졸업 요건을 요구하지 않음.
+                </div>
+              </div>
+            </div>
+          </section>
+    
+          <footer class="ft">
+            <hr />
+            <hr />
+          </footer>
+    
+          <navigation class="nav">
+            <a href="#">
+              <div class="chat-button">
+                <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
+            ></a>
+          </navigation>
+        </div>
+      </body>
+    </html>

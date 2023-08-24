@@ -1,10 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 문헌정보학전공</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-</body>
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>문헌정보학전공</p>
+              <p style="font-size: 1.7em">Library and Information Science</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>글로벌융합대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <!-- changeDept -->
+                    <select name="major" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="국어국문학전공">국어국문학전공</option>
+                    <option value="일어일문학전공">일어일문학전공</option>
+                    <option value="중어중문학전공">중어중문학전공</option>
+                    <option value="영어영문학전공">영어영문학전공</option>
+                    <option value="불어불문학전공">불어불문학전공</option>
+                    <option value="독어독문학전공">독어독문학전공</option>
+                    <option value="스페인어전공">스페인어전공</option>
+                    <option value="사학전공">사학전공</option>
+                    <option value="철학전공">철학전공</option>
+                    <option value="미술사학전공">미술사학전공</option>
+                    <option value="문화인류학전공">문화인류학전공</option>
+                    <option value="경영학전공">경영학전공</option>
+                    <option value="회계학전공">회계학전공</option>
+                    <option value="국제통상학전공">국제통상학전공</option>
+                    <option value="법학전공">법학전공</option>
+                    <option value="사회학전공">사회학전공</option>
+                    <option selected value="문헌정보학전공">문헌정보학전공</option>
+                    <option value="심리학전공">심리학전공</option>
+                    <option value="아동가족학전공">아동가족학전공</option>
+                    <option value="사회복지학전공">사회복지학전공</option>
+                    <option value="정치외교학전공">정치외교학전공</option>
+                    <option value="의상디자인학전공">의상디자인학전공</option>
+                    <option value="유아교육과">유아교육과</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">
+              1. 논문 재출(보고서): 10쪽 이상<br />
+              &nbsp; 1&#41; 참고문헌, 각주 작성에 유의(인용한 자료는 참고문헌이나 주에서 반드시 출처를 밝혀야 함)<br />
+              &nbsp; 2&#41; 주제: 문헌정보학과 관련된 자유주제<br />
+              &nbsp; 3&#41; 표절 시 논문 패스 불가(출처를 밝히지 않고 다른 사람의 논문을 그대로 제출 불가)<br />
+              &nbsp; 4&#41; APA 양식 준수<br />
+              2. 영어: TOEIC 700점 이상, TOEFL(CBT 203점/IBT 74점 이상), TEPS 600점 이상, NEW TEPS 327점 이상 중 1개<br />
+              3. 한자: 한자능력검정 3급 이상(12학번 이전: 시행기관 상관없음 / 13학번 이후: 한국어문회, 한자교육진흥회, 대한검정회만 인정)<br />
+              4. 영어 회화: TOEIC Speaking Level 6 이상 또는 OPIc IM 이상<br />
+              5. 컴퓨터: 컴퓨터활용능력 2급 이상 또는 이에 준하는 컴퓨터 관련 자격증(활용능력 2급 이상, MOS MASTER, 정보처리산업기사, 정보처리기능사, 사무자동화산업기사)<br />
+              (위 1~5 항목 중 택 1)<br />
+              ※ 모든 자격증은 덕성여자대학교 재학 중에 취득한 것만 인정
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>

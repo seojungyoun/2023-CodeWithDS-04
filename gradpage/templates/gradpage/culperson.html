@@ -1,10 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 문화인류학전공</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-</body>
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>문화인류학전공</p>
+              <p style="font-size: 1.7em">Cultural Anthropology</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>글로벌융합대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                  {% csrf_token %}
+                  <!-- changeDept -->
+                  <select name="dept" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="국어국문학전공">국어국문학전공</option>
+                    <option value="일어일문학전공">일어일문학전공</option>
+                    <option value="중어중문학전공">중어중문학전공</option>
+                    <option value="영어영문학전공">영어영문학전공</option>
+                    <option value="불어불문학전공">불어불문학전공</option>
+                    <option value="독어독문학전공">독어독문학전공</option>
+                    <option value="스페인어전공">스페인어전공</option>
+                    <option value="사학전공">사학전공</option>
+                    <option value="철학전공">철학전공</option>
+                    <option value="미술사학전공">미술사학전공</option>
+                    <option selected value="문화인류학전공">문화인류학전공</option>
+                    <option value="경영학전공">경영학전공</option>
+                    <option value="회계학전공">회계학전공</option>
+                    <option value="국제통상학전공">국제통상학전공</option>
+                    <option value="법학전공">법학전공</option>
+                    <option value="사회학전공">사회학전공</option>
+                    <option value="문헌정보학전공">문헌정보학전공</option>
+                    <option value="심리학전공">심리학전공</option>
+                    <option value="아동가족학전공">아동가족학전공</option>
+                    <option value="사회복지학전공">사회복지학전공</option>
+                    <option value="정치외교학전공">정치외교학전공</option>
+                    <option value="의상디자인학전공">의상디자인학전공</option>
+                    <option value="유아교육과">유아교육과</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">
+              1. 졸업논문: 현장연구에 기초한 논문 형식의 보고서를 졸업 전 제출/통과<br />
+              2. 재학 중 2회 이상의 전공 정기학술답사 참여<br />
+              3. 전공필수과목을 모두 수강<br />
+              &nbsp; &nbsp; 문화인류학개론, 인류학의 역사와 문화이론, 현장연구실습1, 현장연구실습2, 에스노그라피실습<br />
+              &nbsp; &nbsp; (위 1~3 세 가지 요건을 모두 충족해야함)<br />
+              &nbsp; &nbsp; * 복수전공/제2전공: 위의 전공 졸업요건 중 1~3까지의 요건 모두 충족 (단, 전공 정기학술답사 참여는 1회 이상)<br />
+              &nbsp; &nbsp; ** 부전공: 문화인류학개론, 인류학의 역사와 문화이론(총 2과목 수강 필수)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>
