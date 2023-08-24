@@ -1,130 +1,130 @@
 <!DOCTYPE html>
 <html lang="kor">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>졸업을 도와조 : 메인</title>
-
-    <link rel="stylesheet" href="./css/main.css" />
-</head>
-<body>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
     <div class="container">
-    <header class="hd">
+      <header class="hd">
         <div class="left-line">
-        <hr />
-        <hr />
+          <hr />
+          <hr />
         </div>
         <div class="logo">
-        <a href="#">
-            <img src="./image/logo.png" alt="로고" />
-        </a>
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
         </div>
         <div class="center-line">
-        <hr />
-        <hr />
+          <hr />
+          <hr />
         </div>
         <div class="user">
-        <div class="login-username">
+          <div class="login-username">
             <div class="login">
-            <a href="#">
+              <a href="#">
                 <p>LOGIN / SIGNUP</p>
-            </a>
+              </a>
             </div>
-        </div>
-        <a href="#">
+          </div>
+          <a href="#">
             <div class="profile">
-            <p>MYPAGE</p>
-            <img src="./image/user.png" alt="프로필" /></div
-        ></a>
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
         </div>
         <div class="right-line">
-        <hr />
-        <hr />
+          <hr />
+          <hr />
         </div>
-    </header>
+      </header>
 
-    <section class="sec">
+      <section class="sec">
         <div class="content">
-        <!-- 전공별 졸업 요건 -->
-        <div class="box">
+          <!-- 전공별 졸업 요건 -->
+          <div class="box">
             <div class="title"><p>전공별 졸업 요건</p></div>
             <div class="dept">
-            <a href="#">
+              <a href="#">
                 <div class="sub-box-1">
-                <p>글로벌융합대학</p>
+                  <p>글로벌융합대학</p>
                 </div></a
-            ><a href="{% url 'technology' %}">
+              ><a href="{% url 'technology' %}">
                 <div class="sub-box-1">
-                <p>과학기술대학</p>
+                  <p>과학기술대학</p>
                 </div></a
-            ><a href="#">
+              ><a href="#">
                 <div class="sub-box-1">
-                <p>약학대학</p>
+                  <p>약학대학</p>
                 </div></a
-            ><a href="#">
+              ><a href="#">
                 <div class="sub-box-1">
-                <p>Art&Design 대학</p>
+                  <p>Art&Design 대학</p>
                 </div></a
-            ><a href="#">
+              ><a href="#">
                 <div class="sub-box-1">
-                <p>미래인재대학</p>
+                  <p>미래인재대학</p>
                 </div></a
-            >
+              >
             </div>
-        </div>
-        <!-- 기타 졸업 요건 -->
-        <div class="box">
+          </div>
+          <!-- 기타 졸업 요건 -->
+          <div class="box">
             <div class="title"><p>기타 졸업 요건</p></div>
             <div class="other">
-            <a href="#">
+              <a href="#">
                 <div class="sub-box-1">
-                <p>정규 학기</p>
+                  <p>정규 학기</p>
                 </div></a
-            ><a href="#">
-            <div class="sub-box-1">
-                <p>졸업 유예</p>
-                </div></a
-            ><a href="#">
+              ><a href="#">
                 <div class="sub-box-1">
-                <p>수료</p>
+                  <p>졸업 유예</p>
                 </div></a
-            ><a href="#">
+              ><a href="#">
                 <div class="sub-box-1">
-                <p>조기 졸업</p>
+                  <p>수료</p>
                 </div></a
-            >
+              ><a href="#">
+                <div class="sub-box-1">
+                  <p>조기 졸업</p>
+                </div></a
+              >
             </div>
-        </div>
-        <!-- 커뮤니티 -->
-        <div class="box">
+          </div>
+          <!-- 커뮤니티 -->
+          <div class="box">
             <div class="title"><p>커뮤니티</p></div>
             <div class="community">
-            <a href="#">
+              <a href="#">
                 <div class="sub-box-1">
-                <p>프로젝트 팀원 모집</p>
+                  <p>프로젝트 팀원 모집</p>
                 </div></a
-            ><a href="#">
+              ><a href="#">
                 <div class="sub-box-1">
-                <p>졸업 정보 공유</p>
+                  <p>졸업 정보 공유</p>
                 </div></a
-            >
+              >
             </div>
+          </div>
         </div>
-        </div>
-    </section>
+      </section>
 
-    <footer class="ft">
+      <footer class="ft">
         <hr />
         <hr />
-    </footer>
+      </footer>
 
-    <navigation class="nav">
+      <navigation class="nav">
         <a href="#">
-        <div class="chat-button">
-            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+          <div class="chat-button">
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
         ></a>
-    </navigation>
+      </navigation>
     </div>
-</body>
+  </body>
 </html>
