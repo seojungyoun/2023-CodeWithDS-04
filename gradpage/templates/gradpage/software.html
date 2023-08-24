@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>졸업을 도와조 : 컴퓨터공학</title>
+    <title>졸업을 도와조 : 소프트웨어</title>
 
     <link rel="stylesheet" href="./css/global.css" />
   </head>
@@ -48,7 +48,6 @@
         <div class="content">
           <div class="dept">
             <!-- 대학 정보 -->
-            <div class="text21"><a href="{% url 'computer' %}">&lt</a></div>
             <div class="univ">
               <p>소프트웨어전공</p>
               <p style="font-size: 1.7em">Software</p>
@@ -57,16 +56,16 @@
               <div class="univ-name">
                 <p>과학기술대학</p>
               </div>
-              {% comment %} <div class="choose">
+              <div class="choose">
                 <form action="#" method="POST">
                   <!-- changeDept -->
                   <select name="dept-tech" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
-                    <option selected value="computer">컴퓨터공학전공</option>
+                    <option value="computer">컴퓨터공학전공</option>
                     <option value="itmedia">IT미디어공학전공</option>
                     <option value="bio">바이오공학전공</option>
                     <option value="cyber">사이버보안전공</option>
-                    <option value="software">소프트웨어전공</option>
+                    <option selected value="software">소프트웨어전공</option>
                     <option value="sports">생활체육학전공</option>
                     <option value="food">식품영양학전공</option>
                     <option value="infstatistic">정보통계학전공</option>
@@ -75,54 +74,46 @@
                   </select>
                   <input type="submit" value="선택" id="choose-btn" />
                 </form>
-              </div> {% endcomment %}
+              </div>
             </div>
           </div>
 
           <div class="box">
             졸업요건
             <div class="contentbox">
-              아래 요건 모두 충족<br />
-              1.졸업프로젝트 1,2 수강<br />
-              2.졸업전시회 WISCOM 참여<br />
-              3.어학 및 컴퓨터 인증(다음 중 1개 이상 충족)<br />
-              (1)영어 TOEIC 700점 이상 혹은 이에 준하는 어학능력점수 취득<br />
-              (2)국가, 민간 공인자격증 취득<br />
-              - 국가자격증: 정보처리기사(한국산업인력공단) 혹은 이에 준하는 공인자격증 취득<br />
-              - 민간자격증: DB(OCP, SQLD), JAVA(OCJP) 등 컴퓨터 관련 사설 자격증 취득<br />
-              (3)공인된 소프트웨어 경진대회 입상<br />
+              1. 필수요건1 (제1전공, 심화전공, 제2전공, 복수전공, 부전공 해당)<br />
+              -졸업 프로젝트 전시 및 발표<br />
+              * 졸업 프로젝트 전시회 출품 및 발표 1회 이상 필수 (전공 교수 평가 합격 필요)<br />
+              -졸업 프로젝트 최종 보고서(논문) 제출 필수<br />
+              * 지도교수 서명을 통한 승일 필수<br />
+              2. 필수요건2 (제1전공, 심화전공 해당)<br />
+              -졸업 필수 이수 과목 (F학점 제외)<br />
+              * 소프트웨어 프로젝트 1 (캡스톤 디자인)<br />
+              * 소프트웨어 프로젝트 2 (캡스톤 디자인)<br />
+              -제 1전공: 졸업 필수 이수 과목 중 1과목 이상 이수 필수<br />
+              -심화전공: 졸업 필수 이수 과목 전체 이수 필수<br />
+              3. 대체요건 (제1전공, 심화전공, 제2전공, 복수전공, 부전공 해당)<br />
+              -졸업 프로젝트 대체 논문 제출(아래 사항 중 하나의 요건에 부합될 경우, 논문 제출로 대체 가능)<br />
+              * 조기 취업자<br />
+              * 전공 관련 전국규모 학술대회 발표 또는 경진대회 입상<br />
+              * 전공 관련 특허 출원<br />
+              * 소프트웨어 또는 IT분야 기사 이상의 국가공인 자격증<br />
+              - 정보처리기사 등 IT분야 기사 이상의 국가공인 자격증<br />
+              - 리눅스 마스터1급, LPIC, MCP, MCSA, MCSE 등 IT 분야 국가공인자격증 및 국제자격증<br />
             </div>
           </div>
 
           <div class="box">
             전시회 정보(최근 2개년)
             <div class="contents">
-              <div class="contentbox-2">
-                <div class="grad-img">
-                  <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
-                </div>
+              <div class="contentbox-2" style="justify-content: center">
                 <div class="grad-text">
-                  <p style="font-size: 1.2em; font-weight: bold">제 32회 졸업전시회</p>
-                  <p style="font-weight: bold; margin-top: 5px">장소</p>
-                  <p>덕성여자대학교 쌍문근화캠퍼스 도서관 오스카라운지</p>
-                  <p style="font-weight: bold; margin-top: 5px">일시</p>
-                  <p>11.16 WED ~ 11.17 THUR 10:00~18:00</p>
-                  <p style="font-weight: bold; margin-top: 5px">온라인 전시회</p>
-                  <a href="http://www.dswuwis.com"><p>http://www.dswuwis.com</p></a>
+                  <p>(정보없음)</p>
                 </div>
               </div>
-              <div class="contentbox-2">
-                <div class="grad-img">
-                  <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
-                </div>
+              <div class="contentbox-2" style="justify-content: center">
                 <div class="grad-text">
-                  <p style="font-size: 1.1em; font-weight: bold">제 32회 졸업전시회</p>
-                  <p style="font-weight: bold; margin-top: 5px">장소</p>
-                  <p>덕성여자대학교 쌍문근화캠퍼스 도서관 오스카라운지</p>
-                  <p style="font-weight: bold; margin-top: 5px">일시</p>
-                  <p>11.16 WED ~ 11.17 THUR 10:00~18:00</p>
-                  <p style="font-weight: bold; margin-top: 5px">온라인 전시회</p>
-                  <a href="http://www.dswuwis.com"><p>http://www.dswuwis.com</p></a>
+                  <p>(정보없음)</p>
                 </div>
               </div>
             </div>
@@ -156,7 +147,7 @@
             </div>
 
             <!-- 아카이빙 버튼 -->
-            <a href="{% url 'create_archiving'%}">
+            <a href="#">
               <div class="contentbox-btn">
                 <p>+</p>
               </div>
