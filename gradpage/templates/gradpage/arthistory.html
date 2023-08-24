@@ -1,10 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 미술사학전공</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-</body>
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>미술사학전공</p>
+              <p style="font-size: 1.7em">History of Arts</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>글로벌융합대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                  {% csrf_token %}
+                  <!-- changeDept -->
+                  <select name="dept" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                      <option value="국어국문학전공">국어국문학전공</option>
+                      <option value="일어일문학전공">일어일문학전공</option>
+                      <option value="중어중문학전공">중어중문학전공</option>
+                      <option value="영어영문학전공">영어영문학전공</option>
+                      <option value="불어불문학전공">불어불문학전공</option>
+                      <option value="독어독문학전공">독어독문학전공</option>
+                      <option value="스페인어전공">스페인어전공</option>
+                      <option value="사학전공">사학전공</option>
+                      <option value="철학전공">철학전공</option>
+                      <option selected value="미술사학전공">미술사학전공</option>
+                      <option value="문화인류학전공">문화인류학전공</option>
+                      <option value="경영학전공">경영학전공</option>
+                      <option value="회계학전공">회계학전공</option>
+                      <option value="국제통상학전공">국제통상학전공</option>
+                      <option value="법학전공">법학전공</option>
+                      <option value="사회학전공">사회학전공</option>
+                      <option value="문헌정보학전공">문헌정보학전공</option>
+                      <option value="심리학전공">심리학전공</option>
+                      <option value="아동가족학전공">아동가족학전공</option>
+                      <option value="사회복지학전공">사회복지학전공</option>
+                      <option value="정치외교학전공">정치외교학전공</option>
+                      <option value="의상디자인학전공">의상디자인학전공</option>
+                      <option value="유아교육과">유아교육과</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">
+              [필수요건1]<br />
+              학술답사 참여 회수 충족.<br />
+              -전공생:3회<br />
+              -편입생:3회<br />
+              -복수전공생:3회<br />
+              -부전공생:1회<br />
+              *대체요건|단, 다음 기준 중 하나를 충족할 경우 답사 참여 횟수 1회를 대체할 수 있다.<br />
+              ① 미술관, 박물관 3회 답사 후 레포트 써서 제출(표지 포함 A4 4매 이상)<br />
+              ② 개인 답사 후 레포트 써서 제출(인증 사진, 자료 필수, 표지 포함 A4 4매 이상)<br />
+              ③ 준학예사 시험 응시표 제출<br />
+              ④ 3회 학회 참관(참관시 1장의 참관기)<br />
+              ⑤ 1년 학과행사 전체 참가(답사발표회, 개강총회, 홈커밍데이)<br />
+              [필수요건2] 다음의 &lt;선택1&gt;과 &lt;선택2&gt; 중 택1<br />
+              &lt;선택요건1&gt;<br />
+              전공생은 다음 기준 중, 하나를 충족하면 된다.<br />
+              1-1. 논문: 전공과목 수업시간에 제출한 리포트 중 하나를 선택하여 논문 형식으로 보완하여 제출함.<br />
+              &nbsp; &nbsp; &nbsp; (형식: A4 용지, 분량: 10장)<br />
+              1-2. 시험: TOEIC 700점 이상<br />
+              1-3. 시험: TOEFL IBT 60점 이상<br />
+              1-4. 시험: TOEFL CBT 200점 잉상<br />
+              1-5. 시험: 한자 능력 시험 2급 이상<br />
+              1-6. 시험: 한국사 능력시험 1급<br />
+              1-7. 시험: 일본어 능력시험(JLTP) 2급 이상<br />
+              1-8. 시험: 스페인어 DELE 베 우노 이상<br />
+              1-9. 시험: SNURT 60점 이상<br />
+              1-10. 시험: FLEX 듣기, 읽기 750 이상 + 쓰기 170 이상<br />
+              &nbsp; &nbsp; &nbsp; &nbsp; OR 듣기, 읽기 750 이상 + 말하기 170 이상 1-11. 시험: 프랑스어 델프 B1 이상<br />
+              1-12. 시험: 중국어 HSK 5급 이상<br />
+              1-13. 시험: 독일어시험 ZD B1<br />
+              1-14. 시험: 러시아어 토르플 1단계 이상<br />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>

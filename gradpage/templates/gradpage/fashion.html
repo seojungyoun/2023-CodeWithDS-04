@@ -1,10 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 의상디자인전공</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-</body>
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>의상디자인전공</p>
+              <p style="font-size: 1.7em">Fashion Design</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>글로벌융합대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                  <!-- changeDept -->
+                  <select name="dept" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="국어국문학전공">국어국문학전공</option>
+                    <option value="일어일문학전공">일어일문학전공</option>
+                    <option value="중어중문학전공">중어중문학전공</option>
+                    <option value="영어영문학전공">영어영문학전공</option>
+                    <option value="불어불문학전공">불어불문학전공</option>
+                    <option value="독어독문학전공">독어독문학전공</option>
+                    <option value="스페인어전공">스페인어전공</option>
+                    <option value="사학전공">사학전공</option>
+                    <option value="철학전공">철학전공</option>
+                    <option value="미술사학전공">미술사학전공</option>
+                    <option value="문화인류학전공">문화인류학전공</option>
+                    <option value="경영학전공">경영학전공</option>
+                    <option value="회계학전공">회계학전공</option>
+                    <option value="국제통상학전공">국제통상학전공</option>
+                    <option value="법학전공">법학전공</option>
+                    <option value="사회학전공">사회학전공</option>
+                    <option value="문헌정보학전공">문헌정보학전공</option>
+                    <option value="심리학전공">심리학전공</option>
+                    <option value="아동가족학전공">아동가족학전공</option>
+                    <option value="사회복지학전공">사회복지학전공</option>
+                    <option value="정치외교학전공">정치외교학전공</option>
+                    <option selected value="의상디자인학전공">의상디자인학전공</option>
+                    <option value="유아교육과">유아교육과</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">
+              1. 졸업패션쇼를 위한 전공필수 과목(패션프로젝트1, 패션프로젝트2) 이수<br />
+              &nbsp; &nbsp; 졸업 전 마지막 1~2학기에 해당 과목을 이수한 후 졸업패션쇼에 참여하여야 졸업 가능<br />
+              2. 공인영어시험(재학 중 취득한 점수만 인정)<br />
+              &nbsp; &nbsp; TOEIC 700점 이상, TOEFL CBT 203점ㆍIBT 74점 이상, TEPS 600점 이상, OPIc IM 이상, ESPT 550점 이상, FLEX 650 이상, IELT 6.0 이상<br />
+              3. 이외 외국어 자격 시험<br />
+              &nbsp; &nbsp; 중국어(HSK) 3급 이상, 일본어(JLPT) N3급 이상<br />
+              &nbsp; &nbsp; ※ 기타 외국어의 경우 이에 상응하는 레벨 인정<br />
+              4. 전공관련 자격증(재학 중 취득한 자격증만 인정)<br />
+              &nbsp; -패션디자인산업기사, 패션머천다이징산업기사, 양장기능사(양장봉제, 양장패턴), 컬러리스트 등<br />
+              &nbsp; -컴퓨터 관련 자격증: MOS Master, 포토샵(gtq), 일러스트레이터, Auto CAD 2급 이상 등(재학 중 취득한 자격증만 인정)<br />
+              5. 전국 규모의 공모전, 외부학술대회 등 전공 관련 교외 입상(재학 중 수상한 내역만 인정)<br />
+              * 1번 항목은 필수 이수, 2~5전 항목 중 택 1 이수<br />
+              ** 의상디자인학을 복수전공하는 학생은 의상디자인전공 필수 졸업요건 1번 항목한 이수<br />
+              *** 제시된 졸업요건 이외의 공인어학시험 및 자격증은 개별적으로 전공심사를 거쳐 PASS 여부가 결정
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>

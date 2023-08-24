@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\KANG\OneDrive\문서\카카오톡 받은 파일\grad_real\grad_real\venv"
+VIRTUAL_ENV="C:\Users\서정윤\Desktop\front\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

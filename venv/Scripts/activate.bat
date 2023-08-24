@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\KANG\OneDrive\문서\카카오톡 받은 파일\grad_real\grad_real\venv
+set VIRTUAL_ENV=C:\Users\서정윤\Desktop\front\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

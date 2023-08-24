@@ -1,10 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 경영학전공</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-</body>
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>경영학전공</p>
+              <p style="font-size: 1.7em">Business Administration</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>글로벌융합대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <!-- changeDept -->
+                    <select name="major" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="국어국문학전공">국어국문학전공</option>
+                    <option value="일어일문학전공">일어일문학전공</option>
+                    <option value="중어중문학전공">중어중문학전공</option>
+                    <option value="영어영문학전공">영어영문학전공</option>
+                    <option value="불어불문학전공">불어불문학전공</option>
+                    <option value="독어독문학전공">독어독문학전공</option>
+                    <option value="스페인어전공">스페인어전공</option>
+                    <option value="사학전공">사학전공</option>
+                    <option value="철학전공">철학전공</option>
+                    <option value="미술사학전공">미술사학전공</option>
+                    <option value="문화인류학전공">문화인류학전공</option>
+                    <option selected value="경영학전공">경영학전공</option>
+                    <option value="회계학전공">회계학전공</option>
+                    <option value="국제통상학전공">국제통상학전공</option>
+                    <option value="법학전공">법학전공</option>
+                    <option value="사회학전공">사회학전공</option>
+                    <option value="문헌정보학전공">문헌정보학전공</option>
+                    <option value="심리학전공">심리학전공</option>
+                    <option value="아동가족학전공">아동가족학전공</option>
+                    <option value="사회복지학전공">사회복지학전공</option>
+                    <option value="정치외교학전공">정치외교학전공</option>
+                    <option value="의상디자인학전공">의상디자인학전공</option>
+                    <option value="유아교육과">유아교육과</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">
+              1. 'MOS Excel(core) 및 PowerPoint(core)' 또는 'ICDL 스프레드시트(M4) 및 프레젠테이션(M6)' 중 택 1<br />
+              &nbsp; 단, 컴퓨터활용능력 1급에 한해서 MOS Ecel(core), ICDL 스프레드시트(M4) 와 대체 가능<br />
+              &nbsp; (PowerPoint는 별개로 취득해야 함)<br />
+              2. 졸업논문 &nbsp; 단, 졸업논문은 어학점수/정보기술 관련 자격증/경영•경제 자격증/교내•외 입상/졸업종합시험 중 택 1로 대체 가능<br />
+              &nbsp; (구체적인 내용에 대해서는 경영학전공 내규 참고) 3. 2011년 대외협력처의 요청에 의거하여, 11학번 이후의 외국인 유학생의 경우 TOPIK 한국어능력시험 5급 이상 취득시<br />
+              &nbsp; 1, 2번의 졸업요건을 충족한 것으로 간주
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>
