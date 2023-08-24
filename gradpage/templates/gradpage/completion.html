@@ -1,10 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 수료</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-</body>
+      <section class="sec">
+        <div class="content">
+          <div class="content-title">
+            <p>정규학기</p>
+          </div>
+
+          <div class="box">
+            <div class="contentbox">
+              ① 학생은 매학기 18학점(약학 2+4년제는 25학점, 약학 6년제는 23학점)까지 이수함을 원칙으로 한다.(개정 2021.12.14.)<br />
+              ② 제1항에도 불구하고, 직전학기 성적 평점평균이 3.5 이상인 학생은 21학점까지, 4.0 이상인 학생은 24학점까지 이수할 수 있다(단, 약학대학 소속 학생 제외). 다만, 직전학기에 학사경고를 받은 학생은 15학점(약학대학은 20학점) 이하로 이수학점을 제한한다.(개정 2021.12.14.)<br />
+              ③ 계절학기 수업에서 이수할 수 있는 최대학점은 6학점으로 한다. 다만, 계절학기 수업 운영에 관한 사항은 총장이 따로 정한다.<br />
+              ④ 이수학점에 관하여 교육과정 운영상 부득이한 경우 총장이 이를 따로 정할 수 있다.<br />
+              ⑤ 학년별 수료학점은 아래와 같다.(개정 2021.12.14.)<br />
+              &nbsp; -1학년: 33학점(약학 6년제는 40학점)<br />
+              &nbsp; -2학년: 65학점(약학 6년제는 80학점)<br />
+              &nbsp; -3학년: 98학점(약학 2+4년제는 41학점, 약학 6년제는 120학점)<br />
+              &nbsp; -4학년: 130점(약학 2+4년제는 82학점, 약학 6년제는 160학점)<br />
+              &nbsp; -5학년: 약학 2+4년제는 123학점, 약학 6년제는 200학점<br />
+              &nbsp; -6학년: 약학 2+4년제는 165학점, 약학 6년제는 240학점<br />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>
