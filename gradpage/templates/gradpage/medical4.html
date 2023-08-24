@@ -1,10 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 약학과(편입생)</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-</body>
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>약학과(편입생)</p>
+              <p style="font-size: 1.7em">Pharmacy</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>약학대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                  <!-- changeDept -->
+                  <select name="dept" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="약학전공(신입생)">약학과(신입생)</option>
+                    <option selected value="약학전공(편입생)">약학과(편입생)</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">
+              1.졸업종합시험<br />
+              2.전공필수과목을 모두 포함한 165학점 이수<br />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>
