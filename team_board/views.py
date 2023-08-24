@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView
 from .forms import BoardForm
 from django.core.exceptions import PermissionDenied
+from django.contrib import messages
 
 def index(request):
     all_boards = Board.objects.all().order_by("-pub_date")
@@ -76,6 +77,19 @@ def edit_board(request, pk):
         board.major = request.POST.get('major')
         board.save()
         return redirect('team_board:index')
+
+def delete_board(request, pk):
+    if request.user.is_authenticated:
+        board = get_object_or_404(Board, pk=pk)
+        if request.user == board.author:
+            board.delete()
+            messages.success(request, '게시글이 삭제되었습니다.')
+            return redirect('team_board:index')
+        else:
+            raise PermissionDenied
+    else:
+        raise PermissionDenied
+
 
 
 # def editboard(request, pk):

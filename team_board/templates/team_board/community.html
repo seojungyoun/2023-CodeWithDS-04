@@ -1,73 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>팀원모집 게시판 리스트</title>
-</head>
-<style type="text/css">
-    thead {
-        background-color: #cecece;
-    }
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 팀원 모집</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/community.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-    .content {
-        max-width: 500px;
-        margin: auto;
-        padding: 10px;
-    }
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>팀원모집 커뮤니티</p>
+            </div>
+            <div class="select-dept">
+              <a href="{% url 'team_board:write_board' %}">
+                <div class="write-btn">
+                  <p>게시글 작성</p>
+                </div>
+              </a>
+              <div class="choose">
+                <form action="#" method="POST">
+                  {% csrf_token %}
+                  <!-- changeDept -->
+                  <select name="major" id="input-dropdown">
+                    <option selected disabled value="">전공을 선택해주세요. ▼</option>
+                    <optgroup label="글로벌융합대학">
+                      <option value="국어국문학전공">국어국문학전공</option>
+                      <option value="일어일문학전공">일어일문학전공</option>
+                      <option value="중어중문학전공">중어중문학전공</option>
+                      <option value="영어영문학전공">영어영문학전공</option>
+                      <option value="불어불문학전공">불어불문학전공</option>
+                      <option value="독어독문학전공">독어독문학전공</option>
+                      <option value="스페인어전공">스페인어전공</option>
+                      <option value="사학전공">사학전공</option>
+                      <option value="철학전공">철학전공</option>
+                      <option value="미술사학전공">미술사학전공</option>
+                      <option value="문화인류학전공">문화인류학전공</option>
+                      <option value="경영학전공">경영학전공</option>
+                      <option value="회계학전공">회계학전공</option>
+                      <option value="국제통상학전공">국제통상학전공</option>
+                      <option value="법학전공">법학전공</option>
+                      <option value="사회학전공">사회학전공</option>
+                      <option value="문헌정보학전공">문헌정보학전공</option>
+                      <option value="심리학전공">심리학전공</option>
+                      <option value="아동가족학전공">아동가족학전공</option>
+                      <option value="사회복지학전공">사회복지학전공</option>
+                      <option value="정치외교학전공">정치외교학전공</option>
+                      <option value="의상디자인학전공">의상디자인학전공</option>
+                      <option value="유아교육과">유아교육과</option>
+                    </optgroup>
+                    <optgroup label="과학기술대학">
+                      <option value="컴퓨터공학전공">컴퓨터공학전공</option>
+                      <option value="IT미디어공학전공">IT미디어공학전공</option>
+                      <option value="바이오공학전공">바이오공학전공</option>
+                      <option value="사이버보안전공">사이버보안전공</option>
+                      <option value="소프트웨어전공">소프트웨어전공</option>
+                      <option value="생활체육학전공">생활체육학전공</option>
+                      <option value="식품영양학전공">식품영양학전공</option>
+                      <option value="정보통계학전공">정보통계학전공</option>
+                      <option value="화학전공">화학전공</option>
+                      <option value="수학전공">수학전공</option>
+                    </optgroup>
+                    <optgroup label="Art & Design 대학">
+                      <option value="동양화전공">동양화전공</option>
+                      <option value="서양화전공">서양화전공</option>
+                      <option value="실내디자인전공">실내디자인전공</option>
+                      <option value="시각디자인전공">시각디자인전공</option>
+                      <option value="텍스타일디자인전공">텍스타일디자인전공</option>
+                    </optgroup>
+                    <optgroup label="약학대학">
+                      <option value="약학과(신입생)">약학과(신입생)</option>
+                      <option value="약학과(편입생)">약학과(편입생)</option>
+                    </optgroup>
+                    <optgroup label="미래인재대학">
+                      <option value="한국학전공">한국학전공</option>
+                      <option value="한국어교육전공">한국어교육전공</option>
+                    </optgroup>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
 
-    .header {
-        text-align: center;
-    }
+          <div class="box">
+            <div class="contentbox">
+              {% if board_list %} {% for board in board_list %}
+              <!-- 게시글 하나 -->
+              <a href="{% url 'team_board:detail' board.id %}">
+                <div class="post">
+                  <div class="post-num">
+                    <p>{{ forloop.counter }}</p>
+                  </div>
+                  <div class="post-text">
+                    <div class="post-title">
+                      <div class="post-dept">
+                        <p>{{ board.major }}</p>
+                      </div>
+                      <p>{{ board.title }}</p>
+                    </div>
+                    <div class="post-date">{{ board.pub_date|date:'Y-m-d' }}</div>
+                  </div>
+                </div></a
+              >
+              {% endfor %} {% else %}
+              <div class="post-text">
+                <p>작성된 게시글이 없습니다.</p>
+              </div>
+              {% endif %}
+              <!-- 게시글 end-->
+            </div>
+          </div>
+        </div>
+      </section>
 
-    .board {
-        width: 100%;
-    }
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
 
-    .even_bgcolor {
-        background-color: #e8efff;
-    }
-</style>
-<body>
-<div class="content">
-    <div class="header">
-        <h2>{{ title }}</h2>
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
     </div>
-    <div style="text-align:right">
-        <a href="{% url 'team_board:write_board' %}">글쓰기</a>
-    </div>
-
-    <table class="board">
-        <thead>
-        <tr class="header">
-            <th style="width:10%;">순번</th>
-            <th style="width:30%">제목</th>
-            <th style="width:30%">작성일자</th>
-            <th style="width:30%">전공</th>
-        </tr>
-        </thead>
-        <tbody>
-            {% if board_list %}
-            {% for board in board_list %}
-            <tr class="{% if forloop.counter|divisibleby:2 %}even_bgcolor{% endif %}">
-                <td style="text-align:center;">{{ forloop.counter }}</td>
-                <td>
-                    <a href="{% url 'team_board:detail' board.id %}">
-                        {{ board.title }}
-                    </a>
-                </td>
-                <td>{{ board.pub_date|date:'Y-m-d' }}</td>
-                <td>{{ board.major }}</td>
-            </tr>
-            {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="3">작성된 게시글이 없습니다.</td>
-            </tr>
-        {% endif %}
-            </tr>
-        </tbody>
-    </table>
-</div>
-</body>
+  </body>
 </html>
-

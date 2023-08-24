@@ -1,10 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kor">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 과학기술대학</title>
+
+    <link rel="stylesheet" href="./css/dept.css" />
 </head>
 <body>
+    <div class="container">
+    <header class="hd">
+        <div class="left-line">
+        <hr />
+        <hr />
+        </div>
+        <div class="logo">
+        <a href="#">
+            <img src="./image/logo.png" alt="로고" />
+        </a>
+        </div>
+        <div class="center-line">
+        <hr />
+        <hr />
+        </div>
+        <div class="user">
+        <div class="login-username">
+            <div class="login">
+            <a href="#">
+                <p>LOGIN / SIGNUP</p>
+            </a>
+            </div>
+        </div>
+        <a href="#">
+            <div class="profile">
+            <p>MYPAGE</p>
+            <img src="./image/user.png" alt="프로필" /></div
+        ></a>
+        </div>
+        <div class="right-line">
+        <hr />
+        <hr />
+        </div>
+    </header>
 
+    <section class="sec">
+        <div class="content">
+        <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+            <p>과학기술대학</p>
+            <p style="font-size: 1.7em">Colleage of Science and Technology</p>
+            </div>
+            <div class="select-dept">
+            <div class="univ-name">
+                <p>과학기술대학</p>
+            </div>
+            <div class="choose">
+                <form action="#" method="POST">
+                <!-- changeDept -->
+                <select name="dept-tech" id="input-dropdown">
+                    <option selected disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="computer">컴퓨터공학전공</option>
+                    <option value="itmedia">IT미디어공학전공</option>
+                    <option value="bio">바이오공학전공</option>
+                    <option value="cyber">사이버보안전공</option>
+                    <option value="software">소프트웨어전공</option>
+                    <option value="sports">생활체육학전공</option>
+                    <option value="food">식품영양학전공</option>
+                    <option value="infstatistic">정보통계학전공</option>
+                    <option value="chemical">화학전공</option>
+                    <option value="math">수학전공</option>
+                </select>
+                <input type="submit" value="선택" id="choose-btn" />
+                </form>
+            </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('dept-form');
+                const dropdown = document.getElementById('input-dropdown');
+        
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();  // 폼 제출을 막음
+        
+                    const selectedOption = dropdown.value;
+                    if (selectedOption === 'computer') {
+                        window.location.href = "{% url 'computer' %}";  // 컴퓨터공학전공 페이지로 이동
+                    } else if (selectedOption === 'itmedia') {
+                        window.location.href = "{% url 'itmedia_department' %}";  // IT미디어과 페이지로 이동
+                    } else if (selectedOption === 'bio') {
+                        window.location.href = "{% url 'bio_department' %}";  // 바이오공학전공 페이지로 이동
+                    } else if (selectedOption === 'cyber') {
+                        window.location.href = "{% url 'cyber_department' %}";  // 사이버보안전공 페이지로 이동
+                    } else if (selectedOption === 'software') {
+                        window.location.href = "{% url 'software_department' %}";  // 소프트웨어전공 페이지로 이동
+                    } else if (selectedOption === 'sports') {
+                        window.location.href = "{% url 'sports_department' %}";  // 생활체육학전공 페이지로 이동
+                    } // 나머지 전공에 대한 처리도 추가하실 수 있습니다.
+                });
+            });
+        </script>
+        <!-- 버튼 (1) -->
+        <div class="dept-btn-1">
+            <a href="{%url 'computer'%}">
+            <div class="sub-box">
+                <p>컴퓨터공학전공</p>
+            </div></a
+            ><a href="{%url 'itmedia_department'%}">
+            <div class="sub-box">
+                <p>IT미디어공학전공</p>
+            </div></a
+            >
+            <a href="#">
+                <div class="sub-box-1">
+                    <p>과학기술대학</p>
+                </div>
+            </a>
+            
+            </a
+            ><a href="{% url 'cyber_department' %}">
+            <div class="sub-box">
+                <p>사이버보안전공</p>
+            </div></a
+            ><a href="{% url 'software_department' %}">
+            <div class="sub-box">
+                <p>소프트웨어전공</p>
+            </div></a
+            >
+        </div>
+        <!-- 버튼 (2) -->
+        <div class="dept-btn-1">
+            <a href="{% url 'sports_department' %}">
+            <div class="sub-box">
+                <p>생활체육학전공</p>
+            </div></a
+            ><a href="{% url 'food_department' %}">
+            <div class="sub-box">
+                <p>식품영양학전공</p>
+            </div></a
+            ><a href="{% url 'infstatic_department' %}">
+            <div class="sub-box">
+                <p>정보통계학전공</p>
+            </div></a
+            ><a href="{% url 'chemical_department' %}">
+            <div class="sub-box">
+                <p>화학전공</p>
+            </div></a
+            ><a href="{% url 'math_department' %}">
+            <div class="sub-box">
+                <p>수학전공</p>
+            </div></a
+            >
+        </div>
+        </div>
+    </section>
+
+    <footer class="ft">
+        <hr />
+        <hr />
+    </footer>
+
+    <navigation class="nav">
+        <a href="#">
+        <div class="chat-button">
+            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+        ></a>
+    </navigation>
+    </div>
 </body>
 </html>

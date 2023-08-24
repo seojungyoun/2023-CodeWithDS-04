@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>졸업을 도와조 : 컴퓨터공학</title>
+    <title>졸업을 도와조 : IT미디어공학</title>
 
     <link rel="stylesheet" href="./css/global.css" />
   </head>
@@ -48,22 +48,21 @@
         <div class="content">
           <div class="dept">
             <!-- 대학 정보 -->
-            <div class="text21"><a href="{% url 'computer' %}">&lt</a></div>
             <div class="univ">
               <p>IT미디어공학전공</p>
-              <p style="font-size: 1.7em">ITMEDIA</p>
+              <p style="font-size: 1.7em">IT Media Engineering</p>
             </div>
             <div class="select-dept">
               <div class="univ-name">
                 <p>과학기술대학</p>
               </div>
-              {% comment %} <div class="choose">
+              <div class="choose">
                 <form action="#" method="POST">
                   <!-- changeDept -->
                   <select name="dept-tech" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
-                    <option selected value="computer">컴퓨터공학전공</option>
-                    <option value="itmedia">IT미디어공학전공</option>
+                    <option value="computer">컴퓨터공학전공</option>
+                    <option selected value="itmedia">IT미디어공학전공</option>
                     <option value="bio">바이오공학전공</option>
                     <option value="cyber">사이버보안전공</option>
                     <option value="software">소프트웨어전공</option>
@@ -75,22 +74,48 @@
                   </select>
                   <input type="submit" value="선택" id="choose-btn" />
                 </form>
-              </div> {% endcomment %}
+              </div>
             </div>
           </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('dept-form');
+    const dropdown = document.getElementById('input-dropdown');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();  // 폼 제출을 막음
+
+        const selectedOption = dropdown.value;
+        if (selectedOption === 'computer') {
+            window.location.href = "{% url 'computer' %}";  // 컴퓨터과 페이지로 이동
+        } else if (selectedOption === 'itmedia') {
+            window.location.href = "{% url 'itmedia_department' %}";  // IT미디어과 페이지로 이동
+        }
+        // 나머지 학과에 대한 이동 처리도 추가하실 수 있습니다.
+    });
+});
+</script>
 
           <div class="box">
             졸업요건
             <div class="contentbox">
-              아래 요건 모두 충족<br />
-              1.졸업프로젝트 1,2 수강<br />
-              2.졸업전시회 WISCOM 참여<br />
-              3.어학 및 컴퓨터 인증(다음 중 1개 이상 충족)<br />
-              (1)영어 TOEIC 700점 이상 혹은 이에 준하는 어학능력점수 취득<br />
-              (2)국가, 민간 공인자격증 취득<br />
-              - 국가자격증: 정보처리기사(한국산업인력공단) 혹은 이에 준하는 공인자격증 취득<br />
-              - 민간자격증: DB(OCP, SQLD), JAVA(OCJP) 등 컴퓨터 관련 사설 자격증 취득<br />
-              (3)공인된 소프트웨어 경진대회 입상<br />
+              1. 졸업작품<br />
+              졸업작품제작을 위한 '디지털미디어프로젝트 1,2' , 교과목 이수와 결과 프로젝트를 졸업작품전시회에 전시한다.<br />
+              -최종 졸업작품 결과 A4 20매 이상의 본 보고서와 데이터를 제출한다.<br />
+              (1)공인어학시험 점수 제출, 졸업년도 기준 2년 내: TOEIC 700 이상에 상응하는 공인어학점수 (TOEIC speaking level 6 이상, TOEFL CBT 200/ IBT 73 dltkd, Opuc IM2 이상 등) 중 택1<br />
+              (2)IT 및 미디어전공 관련 국가공인자격증 1건 이상 취득 ('기사' 이상의 자격증만 인정)<br />
+              국가공인자격증 예: 정보처리기사, 멀티미ㅣ어콘텐츠제작전문가 혹은 컬러리스트 기사 등<br />
+              (3)정부, 공익단체 및 공인단체의 기획 공모전, 전시회 입상 실적 1건 이상 제출, 개인전 혹은 단체전 (최대 5인 이하 공동 작품 전시, 단, 단체전의 경우 2건 이상의 입상 실적 제출)<br />
+              (4)국내외 학위 발표, 연구 논문 게재<br />
+              (위 (1),(2),(3),(4) 항목 중 택 1)<br />
+              2. 졸업필수과목 이수<br />
+              (1)디지털미디어프로젝트1<br />
+              (2)디지털미디어프로젝트2<br />
+              (위 (1),(2)항목 중 한 과목 필수 이수)<br />
+              3.복수전공<br />
+              위의 졸업요건 중 1~2까지의 요건 모두 충족<br />
+              4.부전공<br />
+              요건없음<br />
             </div>
           </div>
 
@@ -99,30 +124,26 @@
             <div class="contents">
               <div class="contentbox-2">
                 <div class="grad-img">
-                  <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
+                  <img src="./image/grad/getInTo.jpg" alt="전시회 이미지" />
                 </div>
                 <div class="grad-text">
-                  <p style="font-size: 1.2em; font-weight: bold">제 32회 졸업전시회</p>
+                  <p style="font-size: 1.2em; font-weight: bold">제 9회 졸업전시회</p>
                   <p style="font-weight: bold; margin-top: 5px">장소</p>
-                  <p>덕성여자대학교 쌍문근화캠퍼스 도서관 오스카라운지</p>
+                  <p>덕성여자대학교 하나누리관</p>
                   <p style="font-weight: bold; margin-top: 5px">일시</p>
-                  <p>11.16 WED ~ 11.17 THUR 10:00~18:00</p>
-                  <p style="font-weight: bold; margin-top: 5px">온라인 전시회</p>
-                  <a href="http://www.dswuwis.com"><p>http://www.dswuwis.com</p></a>
+                  <p>10.27 WED ~ 10.29 FRI 10:00~17:00</p>
                 </div>
               </div>
               <div class="contentbox-2">
                 <div class="grad-img">
-                  <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
+                  <img src="./image/grad/ITsMe.jpg" alt="전시회 이미지" />
                 </div>
                 <div class="grad-text">
-                  <p style="font-size: 1.1em; font-weight: bold">제 32회 졸업전시회</p>
+                  <p style="font-size: 1.1em; font-weight: bold">제 10회 졸업전시회</p>
                   <p style="font-weight: bold; margin-top: 5px">장소</p>
-                  <p>덕성여자대학교 쌍문근화캠퍼스 도서관 오스카라운지</p>
+                  <p>서울 도봉구 마들로13길 84 '서울창업허브 창동'</p>
                   <p style="font-weight: bold; margin-top: 5px">일시</p>
-                  <p>11.16 WED ~ 11.17 THUR 10:00~18:00</p>
-                  <p style="font-weight: bold; margin-top: 5px">온라인 전시회</p>
-                  <a href="http://www.dswuwis.com"><p>http://www.dswuwis.com</p></a>
+                  <p>10.26 WED ~ 10.28 FRI 10:00~17:00</p>
                 </div>
               </div>
             </div>
@@ -156,23 +177,11 @@
             </div>
 
             <!-- 아카이빙 버튼 -->
-            <a href="{% url 'create_archiving'%}">
+            <a href="{% url 'create_archiving' %}">
               <div class="contentbox-btn">
                 <p>+</p>
               </div>
             </a>
-            {% if archive_list %}
-            {% for archive in archive_list %}
-            <div class="archiving-info">
-                <p>전시회 이름: {{ archive.exhibit_title }}</p>
-                <p>서비스 이름: {{ archive.service_title }}</p>
-                <p>팀명: {{ archive.team_name }}</p>
-                <p>팀원: {{ archive.team_member }}</p>
-                <p>설명: {{ archive.description }}</p>
-                <p>사진: <img src="{{ archive.image.url }}" alt="{{ archive.exhibit_title }}" /></p>
-            </div>
-            {% endfor %}
-            {% endif %}
           </div>
         </div>
       </section>
