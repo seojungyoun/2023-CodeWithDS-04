@@ -1,10 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 수학</title>
 
-</body>
+    <link rel="stylesheet" href="./css/global.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="#">
+            <img src="image/logo.png" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="./image/user.png" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
+
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>수학전공</p>
+              <p style="font-size: 1.7em">Mathematics</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>과학기술대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                  <!-- changeDept -->
+                  <select name="dept-tech" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="computer">컴퓨터공학전공</option>
+                    <option value="itmedia">IT미디어공학전공</option>
+                    <option value="bio">바이오공학전공</option>
+                    <option value="cyber">사이버보안전공</option>
+                    <option value="software">소프트웨어전공</option>
+                    <option value="sports">생활체육학전공</option>
+                    <option value="food">식품영양학전공</option>
+                    <option value="infstatistic">정보통계학전공</option>
+                    <option value="chemical">화학전공</option>
+                    <option selected value="math">수학전공</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">
+              1. 수학과 전공 및 복수전공 논문과정<br />
+              a. 논문과정<br />
+              고급해석학1, 복소해석학, 현대대수하1, 미분기하학1, 위상수학, 수치해석개론1을 이수해야하며, 성적이 C+ 이상인 경우 졸업시험 면제<br />
+              또한, 4학년 개설 전공과목 중 3과목 이상 수강해야 함. 단, 교직이수 대상자가 아닌 경우, 4학년 개설 전공과목 중 교직과목을 제외하고 3과목 이상 수강해야 함 (총 이수학점 = 3학점X15과목)<br />
+              b. 영어인증시험: 아래 3가지 시험 중 하나 이상 선택하여 졸업 전까지 제출<br />
+              영어 TOEIC 700이상 또는 TOEIC speaking 130점 이상/ TOEFL(CBT 200점, IBT 70점) / NEW TEPS 265점<br />
+              2. 수학과 부전공 논문과정<br />
+              고급해석학1, 현대대수학1은 필수 이수, 미분기하학1과 위상수학1 중 하나 이상을 택하여 이수해야 하며, 성적이 C+ 이상인 경우 졸업시험 면제. 즉, 고급해석학1, 현대대수학1을 포함하여 총 3과목 이상 이수 (총 이수학저무 30학점=3학점X10과목)<br />
+              3. 수학 전공심화 논문과정<br />
+              상기 수학과 전공 및 복수전공 논문과정과 동일(총 이수학점 63학점=3학점X21과목)<br />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>

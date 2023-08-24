@@ -112,5 +112,9 @@
     <div style="text-align:left;">
         <a href="{% url 'team_board:edit_board' board.id %}">수정</a>
     </div>
+    <div style="text-align: left;">
+        <a href="{% url 'team_board:delete_board' board.id %}" onclick="return confirm('게시글을 삭제하시겠습니까?')">삭제</a>
+    </div>
+    
 </body>
 </html>

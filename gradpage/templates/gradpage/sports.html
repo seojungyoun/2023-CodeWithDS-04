@@ -1,10 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 생활체육학</title>
 
-</body>
+    <link rel="stylesheet" href="./css/global.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="#">
+            <img src="image/logo.png" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="./image/user.png" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
+
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>생활체육학전공</p>
+              <p style="font-size: 1.7em">Sports for all</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>과학기술대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                  <!-- changeDept -->
+                  <select name="dept-tech" id="input-dropdown">
+                    <option disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="computer">컴퓨터공학전공</option>
+                    <option value="itmedia">IT미디어공학전공</option>
+                    <option value="bio">바이오공학전공</option>
+                    <option value="cyber">사이버보안전공</option>
+                    <option value="software">소프트웨어전공</option>
+                    <option selected value="sports">생활체육학전공</option>
+                    <option value="food">식품영양학전공</option>
+                    <option value="infstatistic">정보통계학전공</option>
+                    <option value="chemical">화학전공</option>
+                    <option value="math">수학전공</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            졸업요건
+            <div class="contentbox">문화체육관광부에서 발급하는 스포츠지도자 6가지(전문, 생활, 장애인, 유소년, 노인, 건강운동관리사) 자격증 중 한 가지를 취득, 또는 생활체육지도자로서 필요한 체육 분야와 스포츠 현장에서 적용 가능한 자격증을 4개 이상 취득한 자 또는 전공에서 졸업여부를 승인한 자. 단, 생활체육학전공에서 인정하는 자격증에 한함.</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>
