@@ -1,0 +1,303 @@
+/* initial */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  color: #333333;
+}
+
+img {
+  width: auto;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Pretendard-Regular";
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  margin: 0;
+  font-size: 1.3em;
+}
+
+/* header */
+.hd {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  width: 100vw;
+  height: 145px;
+
+  position: fixed;
+  top: 0;
+}
+
+.left-line,
+.right-line {
+  width: 10%;
+}
+
+.center-line {
+  width: 35%;
+}
+
+hr {
+  border: none;
+  border-bottom: solid 3px #8f183e;
+}
+
+.logo img {
+  width: 180px;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login {
+  width: 10vw;
+  display: flex;
+  justify-content: right;
+}
+
+.login-username {
+  margin-right: 40px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile img {
+  margin-left: 15px;
+  width: 50px;
+}
+
+/* footer */
+.ft {
+  width: 100vw;
+
+  position: fixed;
+  bottom: 30px;
+  margin-top: 20px;
+}
+
+/* section */
+.sec {
+  height: calc(100vh - 145px - 58.8px);
+  margin-top: 145px;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 80%;
+}
+
+.box {
+  width: 100%;
+  height: auto;
+  background-color: #8f183e;
+  border-radius: 30px;
+  font-size: 1.6em;
+  color: white;
+  text-align: center;
+
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* navigation */
+.nav {
+  position: fixed;
+  bottom: 30px;
+  right: 45px;
+
+  width: 100px;
+  height: 100px;
+
+  background-color: #8f183e;
+  border: solid 3px white;
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-button img {
+  width: 55%;
+}
+
+.dept {
+  margin-top: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dept p {
+  font-size: 2em;
+}
+
+.select-dept p {
+  font-size: 1.4em;
+}
+
+.choose {
+  margin-top: 10px;
+}
+
+#input-dropdown {
+  height: 4vh;
+  margin: 0;
+  outline: 0;
+  border: none;
+  background-color: #e9d1d8;
+  padding: 6px;
+  border-radius: 10px;
+  font-family: "Pretendard-Regular";
+  /* text-align: center; */
+  font-size: 1.1em;
+  padding-left: 10px;
+}
+
+#choose-btn {
+  color: white;
+  margin-left: 10px;
+  height: 4vh;
+  background-color: #8f183e;
+  opacity: 80%;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  padding: 0 10px;
+  font-size: 1.1em;
+  font-family: "Pretendard-Regular";
+}
+
+.select-dept {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.contents {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contentbox,
+.contentbox-2,
+.contentbox-3,
+.contentbox-btn {
+  /* display: inline-block; */
+  /* width: 100%; */
+  height: auto;
+  background-color: white;
+  border-radius: 30px;
+  font-family: Pretendard-Regular;
+  color: black;
+  text-align: left;
+  line-height: 1.5em;
+
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 50px;
+}
+
+.contentbox-2 {
+  width: 100%;
+  min-height: 20vh;
+
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.contentbox-3 {
+  /* width: 100%; */
+  min-height: 20vh;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.contentbox-btn {
+  height: 3vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #e6e6e6;
+}
+
+.contentbox-btn:hover {
+  background-color: #e9d1d8;
+}
+
+.contentbox-btn:active {
+  background-color: #8f183e;
+  color: white;
+}
+
+.grad-img img {
+  height: 20vh;
+  width: auto;
+
+  margin-right: 15px;
+}
+
+.grad-text p {
+  font-size: 1em;
+}
+
+.contentbox-btn p {
+  font-size: 2.5em;
+}
