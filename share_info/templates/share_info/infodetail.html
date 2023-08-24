@@ -1,86 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>정보공유글 상세페이지</title>
-</head>
-<style type="text/css">
-        .content {
-            max-width:500px;
-            margin: auto;
-            padding:10px;
-        }
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 졸업 정보 공유(게시글 상세)</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/infodetail.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="#">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="{% url 'share_info:index' %}">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
 
-        .reply_content {
-            text-align:right
-        }
+      <section class="sec">
+        <div class="content">
+          <div class="contents">
+            <div class="content-title">
+              <p>게시글 (졸업 정보 공유)</p>
+            </div>
+            <!-- 삭제 수정 버튼 -->
+            <div class="content-btns">
+              <a href="{% url 'share_info:edit_info' info.id %}"
+                ><div class="rewrite-btn">
+                  <p>수정</p>
+                </div></a
+              >
+              <a href="#"
+                ><div class="delete-btn">
+                  <p>삭제</p>
+                </div></a
+              >
+            </div>
+          </div>
 
-        .reply_content .reply{
-            border-radius: 0.5em;
-            display: block;
-            margin: 4px;
-            padding: 3px 10px;
-        }
+          <div class="box">
+            <div class="contentbox">
+              <div class="content-titles">
+                <p>{{ info.title }}</p>
+                <div class="content-dept">
+                  <p>{{info.major}}</p>
+                </div>
+              </div>
+              <div class="content-text">
+                <p>{{ info.content }}</p>
+              </div>
+            </div>
+            <div class="writer">
+              <p>작성자 : writer</p>
+              <p>작성일시 : {{ info.pub_date }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        .board_for_read {
-            width: 100%;
-            background-color:#f1f1f1;
-        }
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
 
-        #title {
-            height: 32px;
-            width: 100%;
-            border-radius: 0.5em;
-            border: none;
-            font-family: inherit;
-            font-size: inherit;
-            background: none;
-        }
-
-        textarea {
-            width: 100%;
-            font-family: inherit;
-            font-size: 100%;
-            resize: none;
-            border-radius: 0.5em;
-            padding-block: 10px;
-            border: 0px;
-            background: none;
-        }
-
-        .td_title {
-            background-color: #d8d8d8
-        }
-    </style>
-<body>
-    <div class="content">
-        <p>{{info.major}}</p>
-        <table class="board_for_read">
-            <tbody>
-                <tr>
-                    <td class="td_title" style="text-align:center; width:20%;">제목</td>
-                    <td style="padding:10px;">
-                        <input type="text" name="title" id="title" value="{{ info.title }}" readonly/>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td_title" style="text-align:center; width:20%;">작성일자</td>
-                    <td style="padding:10px;">
-                        <span>{{ info.pub_date }}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="td_title" style="text-align:center;">내용</td>
-                    <td style="padding:10px;">
-                        <textarea name="detail" id="detail" rows="10" readonly>{{ info.content }}</textarea>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div style="text-align:left;">
-            <a href="{% url 'share_info:index' %}">> Home</a>
-    <div style="text-align:left;">
-        <a href="{% url 'share_info:edit_info' info.id %}">수정</a>
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
     </div>
-</body>
+    <script src="{% static 'js/preview-file.js' %}"></script>
+  </body>
 </html>
