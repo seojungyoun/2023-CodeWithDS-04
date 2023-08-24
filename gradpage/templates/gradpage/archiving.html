@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 아카이빙</title>
+
+    <link rel="stylesheet" href="./css/archiving.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="#">
+            <img src="./image/logo.png" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="./image/user.png" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
+
+      <section class="sec">
+        <div class="content">
+          <div class="content-title">
+            <p>졸업작품 아카이빙</p>
+          </div>
+
+          <div class="box">
+            <form action="{% url 'create_archiving' %}" method="POST" class="form" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="exhibit-title">
+                <p>전시회 이름</p>
+                <input type="text" name="exhibit_title" id="exhibit-title-text" placeholder="전시회의 이름을 작성해주세요." />
+              </div>
+              <div class="title">
+                <p>서비스 이름</p>
+                <input type="text" name="service_title" id="title-text" placeholder="서비스의 이름을 작성해주세요." />
+              </div>
+              <div class="team">
+                <div class="team-name">
+                  <p>팀명</p>
+                  <input type="text" name="team_name" id="team-name-text" placeholder="팀명을 작성해주세요." />
+                </div>
+                <div class="team-people">
+                  <p>팀원</p>
+                  <input type="text" name="team_member" id="team-people-text" placeholder="팀원을 작성해주세요. (여러명일 경우 모두)" />
+                </div>
+              </div>
+              <div class="filebox">
+                <p>사진</p>
+                <div id="file-in">
+                  <input type="file" name="file" id="file" accept="image" onchange="setImageFn(this)" />
+                  <div id="file-preview"></div>
+                </div>
+              </div>
+              <div class="description">
+                <p>설명</p>
+                <textarea name="description" id="description-text" cols="" rows="" placeholder="서비스에 대한 설명을 작성해주세요."></textarea>
+              </div>
+              <input type="submit" value="등록" class="submit-button" />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+    <script src="./js/preview-file.js"></script>
+  </body>
+</html>

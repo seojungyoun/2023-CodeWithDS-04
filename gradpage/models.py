@@ -32,10 +32,20 @@ class Display_info(models.Model):
     link=models.URLField()
     image = models.ImageField(upload_to='gradpage/images/%Y/%m/%d/')
 
+# class Archive(models.Model):
+#     major = models.ForeignKey(Major, null=True, on_delete=models.SET_NULL)
+#     title=models.TextField(max_length=100)
+#     team_name = models.CharField(max_length=30, default='')
+#     team_member = models.CharField(max_length=100, default='')
+#     description=models.TextField()
+#     image = models.ImageField(upload_to='gradpage/images/%Y/%m/%d/')
+
 class Archive(models.Model):
     major = models.ForeignKey(Major, null=True, on_delete=models.SET_NULL)
-    title=models.TextField(max_length=100)
-    team_name = models.CharField(max_length=30, default='')
-    team_member = models.CharField(max_length=100, default='')
-    description=models.TextField()
-    image = models.ImageField(upload_to='gradpage/images/%Y/%m/%d/')
+    exhibit_title = models.TextField(max_length=100)  # 전시회 이름
+    service_title = models.TextField(max_length=100, default='')  # 서비스 이름
+    team_name = models.CharField(max_length=30, default='팀명을 작성해주세요.')
+    team_member = models.CharField(max_length=100, default='팀원을 작성해주세요. (여러명일 경우 모두)')
+    description = models.TextField()  # 설명
+    file = models.ImageField(upload_to='gradpage/images/%Y/%m/%d/')  # 사진
+
